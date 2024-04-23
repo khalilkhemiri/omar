@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <!-- Assurez-vous d'inclure les liens vers les fichiers CSS et JavaScript nécessaires pour Bootstrap et Font Awesome ici -->
+</head>
+<body >
+    <nav class="navbar navbar-expand-lg" style="background-color: #c5d147;">
+        <div class="container-fluid">
+            <img src="assets/imag/7.png" alt="Logo" style="width: 150px; height: 50px;">
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#login">
+                            <i class="fa fa-sign-out"></i> Déconnexion
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5" style="padding: 20px; border-radius: 10px;">
+        <!-- Search Bar -->
+        <div class="search-box">
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+            <input type="text" class="input-search" placeholder="Type to Search...">
+        </div>
+
+        <!-- Button to Add New Employee -->
+        <div class="button-plus">
+            <button class="btn btn-success" (click)="addNewEmployee()">
+            <i class="fa fa-plus"></i> Ajouter un nouveau devis
+        </button></div>
+        
+        <table class="table table-striped">
+            
+            <thead>
+                <tr>
+                    <th colspan="5" style="text-align: right;">
+                        
+                    </th>
+                   
+                         
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Date de naissance</th>
+                    <th>Zone</th>
+                    <th>Accepter offre </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of displayedEmployees">
+                    <td>{{ employee.nom }}</td>
+                    <td>{{ employee.prenom }}</td>
+                    <td>{{ employee.date }}</td>
+                    <td>{{ employee.zone }}</td>
+                    <td>{{ employee.payment }}</td>
+                    <td>
+                        <button (click)="updateEmployee(employee.id)" class="btn btn-info" style="margin-left: 10px ; width: 60px;">
+                            <i class="fa fa-pencil"></i> 
+                        </button>
+                        <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 10px ; width: 60px;">
+                            <i class="fa fa-trash"></i> 
+                        </button>
+                        <button (click)="detail(employee.id)" class="btn btn-info" style="margin-left: 10px; width: 60px;">
+                            <i class="fa fa-eye"></i> 
+                        </button>
+                        <button   (click)="generatePdf(employee.id)"   class="btn btn-info" style="margin-left: 10px; width: 60px;">
+                            <i class="fa fa-upload"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>    
+        </table>
+        <mat-paginator
+        [length]="employees.length"
+        [pageSize]="employeesPerPage"
+        [pageSizeOptions]="[employeesPerPage]"
+        (page)="onPageChange($event)"
+      ></mat-paginator>
+    </div>
+
+    <!-- Assurez-vous d'inclure les liens vers les fichiers CSS et JavaScript nécessaires pour Bootstrap et Font Awesome ici -->
+</body>
+</html>

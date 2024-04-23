@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dev</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+        crossorigin="anonymous">
+</head>
+
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif;">
+
+    <div class="container" style="background-color: #c5d147; height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div class="card col-md-6" style="background-color: white; padding: 20px; border-radius: 10px; height: 480px;">
+            <!-- Reste de votre formulaire de connexion -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="assets/imag/star1.jpg" alt="Logo" style="width: 190px; height: 100px; margin-bottom: 20px;">
+                <h1 style="color: #01644d; font-size: 28px; font-weight: bold; text-align: center;">Authentification</h1>
+                
+                <form (ngSubmit)="userlogin()" style="margin-top: 20px;">
+                    <div class="mb-3">
+                        <label for="userId" class="form-label" style="font-weight: bold;">Identifiant</label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <mat-icon>account_circle</mat-icon> <!-- Icône utilisateur -->
+                            </div>
+                            <input type="text" [(ngModel)]="user.nom" class="form-control" id="userId" name="userId"
+                                placeholder="Entrez votre identifiant" style="border-radius: 4px; padding: 10px;">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userpasswd" class="form-label" style="font-weight: bold;">Mot de passe</label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <mat-icon>lock</mat-icon> <!-- Icône verrou -->
+                            </div>
+                            <input type="password" [(ngModel)]="user.mdp" class="form-control" id="userpasswd"
+                                name="password" placeholder="Entrez votre mot de passe" style="border-radius: 4px; padding: 10px;">
+                        </div>
+                        
+                        <a href="#" style="text-decoration: underline; color: #01644d; font-size: 14px; margin-bottom: 10px;padding-top: 100cm;" >
+                            Mot de passe oublié?
+                        </a>
+                        <br>
+                    </div>
+                    <div style="text-align: center;">
+                     
+                        <button type="submit" class="btn white btn-primary" style="background-color: #c5d147">
+                            Connexion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

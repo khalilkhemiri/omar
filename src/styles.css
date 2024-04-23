@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.form-control-position {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Style pour l'icône */
+  .ft-user {
+    font-family: "Font Awesome 5 Free"; /* Assurez-vous d'avoir importé la police Font Awesome */
+    font-weight: 900;
+    font-size: 18px;
+    color: #aaa; /* Couleur de l'icône */
+  }
